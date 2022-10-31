@@ -14,6 +14,7 @@
 		1358D0CF29100E4100803741 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1358D0CE29100E4100803741 /* Assets.xcassets */; };
 		1358D0D229100E4100803741 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1358D0D029100E4100803741 /* LaunchScreen.storyboard */; };
 		1358D0DA2910102A00803741 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358D0D92910102A00803741 /* PersonCell.swift */; };
+		1361D7D62910534B00BE6320 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361D7D52910534B00BE6320 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1358D0D129100E4100803741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1358D0D329100E4100803741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1358D0D92910102A00803741 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		1361D7D52910534B00BE6320 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		1358D0C429100E4000803741 /* HackingWithSwiftProject10 */ = {
 			isa = PBXGroup;
 			children = (
+				1361D7D52910534B00BE6320 /* Person.swift */,
 				1358D0C529100E4000803741 /* AppDelegate.swift */,
 				1358D0C729100E4000803741 /* SceneDelegate.swift */,
 				1358D0C929100E4000803741 /* ViewController.swift */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1361D7D62910534B00BE6320 /* Person.swift in Sources */,
 				1358D0CA29100E4000803741 /* ViewController.swift in Sources */,
 				1358D0C629100E4000803741 /* AppDelegate.swift in Sources */,
 				1358D0DA2910102A00803741 /* PersonCell.swift in Sources */,
