@@ -41,25 +41,40 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let person = people[indexPath.item]
         
-        let ac = UIAlertController(title: "Rename Person", message: nil, preferredStyle: .alert)
-        ac.addTextField()
+        let ac = UIAlertController(title: "Config", message: "Do you want to rename person or delete image?", preferredStyle: .alert)
         
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {[weak self, weak ac] _ in
-            guard let newName = ac?.textFields?[0].text else { return }
-            person.name = newName
+        ac.addAction(UIAlertAction(title: "Delete Image", style: .default, handler: {[weak self] _ in
+            self?.people.remove(at: indexPath.item)
             
             self?.collectionView.reloadData()
         }))
+        
+        ac.addAction(UIAlertAction(title: "Rename Person", style: .default, handler: {[weak self, weak ac] _ in
+            let renameAC = UIAlertController(title: "Rename Person", message: nil, preferredStyle: .alert)
+            renameAC.addTextField()
+            
+            renameAC.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            
+            renameAC.addAction(UIAlertAction(title: "OK", style: .default, handler: {[weak self, weak renameAC] _ in
+                guard let newName = renameAC?.textFields?[0].text else { return }
+                self?.people[indexPath.item].name = newName
+                
+                self?.collectionView.reloadData()
+            }))
+            
+            self?.present(renameAC, animated: true)
+        }))
+    
         present(ac, animated: true)
     }
     
     @objc func addNewPerson() {
         
         let picker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        }
         picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
